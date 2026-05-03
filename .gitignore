@@ -1,0 +1,26 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.pdf
+*.synctex.gz
+affiche_ieee_techday_2026.*
+
+# Thesis
+Thése_version_corrigé.pdf
+publicationsLAFPT.pdf
+
+# Keynote
+Keynote/
+
+# Claude settings (local only)
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temp
+*.tmp
+*.bak

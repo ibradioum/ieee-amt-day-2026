@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IEEE Antenna & Microwave Tech Day 2026 — Antennes, IoT et Sans Fil pour le Développement. 13 Mai 2026, ESP/UCAD, Dakar, Sénégal.">
+  <meta property="og:title" content="IEEE Antenna & Microwave Tech Day 2026">
+  <meta property="og:description" content="Antennes, IoT et Sans Fil pour le Développement — 13 Mai 2026, ESP/UCAD Dakar">
+  <title>IEEE Antenna & Microwave Tech Day 2026 — ESP/UCAD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-950: #00103d;
+      --blue-900: #001a5c;
+      --blue-800: #002885;
+      --blue-700: #003087;
+      --blue-600: #0044bb;
+      --blue-500: #0055d4;
+      --blue-300: #93c5fd;
+      --blue-200: #bfdbfe;
+      --blue-100: #dbeafe;
+      --blue-50:  #eff6ff;
+      --orange:   #e87722;
+      --gold:     #f5a623;
+      --gold-lt:  #fef3c7;
+      --dark:     #0d1b2a;
+      --text:     #1e3a5f;
+      --muted:    #6b7280;
+      --surface:  #ffffff;
+      --bg-lt:    #f8faff;
+      --bg-sec:   #eef4ff;
+      --sh-sm: 0 1px 3px rgba(0,0,0,.10),0 1px 2px rgba(0,0,0,.06);
+      --sh:    0 4px 6px -1px rgba(0,0,0,.10),0 2px 4px rgba(0,0,0,.06);
+      --sh-lg: 0 10px 15px -3px rgba(0,0,0,.10),0 4px 6px rgba(0,0,0,.05);
+      --sh-xl: 0 20px 25px -5px rgba(0,0,0,.12);
+      --r: 12px; --rsm: 8px; --rlg: 20px;
+      --tr: .28s ease;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    [hidden]{display:none!important}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text);background:#fff;line-height:1.6;overflow-x:hidden}
+    img{max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+
+    /* ── LAYOUT ── */
+    .container{max-width:1180px;margin:0 auto;padding:0 24px}
+    section{scroll-margin-top:80px}
+
+    /* ── TYPOGRAPHY ── */
+    .sec-title{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;color:var(--blue-700);margin-bottom:.4rem}
+    .sec-title::after{content:'';display:block;width:54px;height:4px;background:var(--orange);border-radius:2px;margin-top:.6rem}
+    .sec-title.center::after{margin-left:auto;margin-right:auto}
+    .sec-sub{font-size:1.05rem;color:var(--muted);max-width:580px}
+    .sec-head{text-align:center;margin-bottom:3rem}
+    .sec-head .sec-title::after{margin-inline:auto}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;gap:.45rem;padding:.7rem 1.6rem;border-radius:50px;font-weight:600;font-size:.92rem;cursor:pointer;transition:all var(--tr);border:none;white-space:nowrap;line-height:1}
+    .btn-primary{background:var(--orange);color:#fff}
+    .btn-primary:hover{background:#c9621a;transform:translateY(-2px);box-shadow:0 8px 20px rgba(232,119,34,.4)}
+    .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.65)}
+    .btn-outline:hover{background:rgba(255,255,255,.12);border-color:#fff}
+    .btn-blue{background:var(--blue-700);color:#fff}
+    .btn-blue:hover{background:var(--blue-800);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,48,135,.3)}
+    .tag{display:inline-block;padding:.22rem .7rem;border-radius:50px;font-size:.75rem;font-weight:700}
+    .tag-blue{background:var(--blue-100);color:var(--blue-700)}
+    .tag-orange{background:#fff3e0;color:var(--orange)}
+
+    /* ── NAVBAR ── */
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 0;transition:background var(--tr),box-shadow var(--tr),padding var(--tr)}
+    #navbar.scrolled{background:rgba(0,26,92,.97);backdrop-filter:blur(12px);padding:.65rem 0;box-shadow:0 2px 24px rgba(0,0,0,.35)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+    .nav-brand{display:flex;align-items:center;gap:.7rem;flex-shrink:0}
+    .nav-brand img{height:36px;width:auto;filter:brightness(0) invert(1)}
+    .nav-brand-text{font-size:.82rem;font-weight:700;color:#fff;line-height:1.2}
+    .nav-brand-text span{display:block;font-weight:400;opacity:.7;font-size:.68rem}
+    .nav-links{display:flex;align-items:center;gap:.15rem;list-style:none}
+    .nav-links a{color:rgba(255,255,255,.82);font-size:.84rem;font-weight:500;padding:.45rem .7rem;border-radius:var(--rsm);transition:all var(--tr)}
+    .nav-links a:hover{color:#fff;background:rgba(255,255,255,.12)}
+    .nav-ctrl{display:flex;align-items:center;gap:.65rem}
+    .lang-toggle{display:flex;background:rgba(255,255,255,.12);border-radius:50px;padding:3px}
+    .lang-btn{padding:.28rem .75rem;border-radius:50px;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.65);cursor:pointer;transition:all var(--tr);border:none;background:transparent}
+    .lang-btn.active{background:#fff;color:var(--blue-700)}
+    .nav-reg{background:var(--orange);color:#fff;padding:.45rem 1.15rem;border-radius:50px;font-size:.83rem;font-weight:600;transition:all var(--tr)}
+    .nav-reg:hover{background:#c9621a;transform:translateY(-1px)}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.45rem}
+    .hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all var(--tr)}
+
+    /* ── PHASE BAR ── */
+    #phase-bar{background:var(--blue-800);padding:.55rem 0;text-align:center;position:sticky;top:0;z-index:999;margin-top:68px}
+    .phase-sw{display:inline-flex;gap:.4rem;background:rgba(0,0,0,.2);padding:3px;border-radius:50px}
+    .phase-btn{padding:.35rem 1.15rem;border-radius:50px;font-size:.78rem;font-weight:600;cursor:pointer;border:none;background:transparent;color:rgba(255,255,255,.6);transition:all var(--tr);display:flex;align-items:center;gap:.4rem}
+    .phase-btn.active{background:#fff;color:var(--blue-800)}
+    .pulse-dot{width:7px;height:7px;border-radius:50%;background:#ff4444;animation:pulse 1.4s ease-in-out infinite}
+    @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.6}}
+
+    /* ── PHASE VISIBILITY ── */
+    [data-phases]{display:block}
+
+    /* ── HERO ── */
+    #hero{min-height:100vh;background:linear-gradient(140deg,var(--blue-950) 0%,var(--blue-800) 55%,#0a1f6b 100%);position:relative;display:flex;align-items:center;padding:110px 0 70px;overflow:hidden}
+    .hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 18% 55%,rgba(0,85,212,.18) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(232,119,34,.12) 0%,transparent 45%)}
+    .hero-wave{position:absolute;bottom:-1px;left:0;right:0;height:80px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23ffffff' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80Z'/%3E%3C/svg%3E") no-repeat bottom/cover}
+    .hero-grid{display:grid;grid-template-columns:1fr 320px;gap:3.5rem;align-items:center;position:relative;z-index:1}
+    .hero-eyebrow{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-bottom:1.4rem}
+    .hero-badge{display:inline-flex;align-items:center;gap:.45rem;padding:.35rem .9rem;background:rgba(232,119,34,.18);border:1px solid rgba(232,119,34,.4);border-radius:50px;color:var(--gold);font-size:.82rem;font-weight:700}
+    .ieee-badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85)}
+    .hero-title{font-size:clamp(2rem,4.8vw,3.3rem);font-weight:800;color:#fff;line-height:1.12;margin-bottom:.9rem;letter-spacing:-.02em}
+    .hero-title .accent{color:var(--gold)}
+    .hero-sub{font-size:clamp(.95rem,2.2vw,1.2rem);color:rgba(255,255,255,.78);font-style:italic;margin-bottom:1.8rem}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:2.2rem}
+    .hero-meta-item{display:flex;align-items:center;gap:.45rem;color:rgba(255,255,255,.88);font-size:.88rem;font-weight:500}
+    .meta-icon{font-size:1rem}
+    .hero-actions{display:flex;gap:.9rem;flex-wrap:wrap}
+
+    /* countdown */
+    .cdown-widget{background:rgba(255,255,255,.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.13);border-radius:var(--rlg);padding:1.75rem 1.5rem;text-align:center}
+    .cdown-lbl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:1.4rem}
+    .cdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:1.1rem}
+    .cdown-item{display:flex;flex-direction:column;align-items:center}
+    .cdown-num{font-size:2.4rem;font-weight:800;color:#fff;line-height:1;font-variant-numeric:tabular-nums;min-width:2.4ch;text-align:center}
+    .cdown-unit{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-top:.25rem}
+    .cdown-note{font-size:.75rem;color:rgba(255,255,255,.5)}
+
+    /* live hero widget */
+    .live-widget{background:rgba(255,68,68,.1);border:1px solid rgba(255,68,68,.3);border-radius:var(--rlg);padding:1.5rem;color:#fff;text-align:center}
+    .live-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,68,68,.2);border:1px solid rgba(255,68,68,.4);border-radius:50px;padding:.3rem .9rem;font-size:.8rem;font-weight:700;color:#ff8080;margin-bottom:1rem}
+    .live-widget p{color:rgba(255,255,255,.75);font-size:.9rem;margin-bottom:1.2rem}
+
+    /* post hero widget */
+    .post-widget{background:rgba(255,255,255,.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.13);border-radius:var(--rlg);padding:1.75rem 1.5rem;text-align:center;color:#fff}
+    .post-widget .big{font-size:2.5rem;font-weight:800;color:var(--gold)}
+    .post-widget p{color:rgba(255,255,255,.65);font-size:.85rem;margin-top:.35rem}
+
+    /* ── ABOUT ── */
+    #about{padding:5rem 0;background:#fff}
+    .about-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:4rem;align-items:start}
+    .about-text p{color:var(--text);line-height:1.85;margin-bottom:1rem}
+    .about-objs{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-top:1.5rem}
+    .about-objs li{display:flex;gap:.7rem;align-items:flex-start}
+    .obj-ic{flex-shrink:0;width:26px;height:26px;background:var(--blue-100);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--blue-700);font-size:.78rem;font-weight:700;margin-top:2px}
+    .stats-col{display:flex;flex-direction:column;gap:1.15rem}
+    .stat-card{background:var(--bg-lt);border-radius:var(--r);padding:1.4rem;border-left:4px solid var(--blue-700)}
+    .stat-num{font-size:1.9rem;font-weight:800;color:var(--blue-700);line-height:1}
+    .stat-lbl{font-size:.84rem;color:var(--muted);margin-top:.2rem}
+    .aud-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
+
+    /* ── PROGRAM ── */
+    #program{padding:5rem 0;background:var(--bg-lt)}
+    .timeline{position:relative;max-width:780px;margin:0 auto}
+    .timeline::before{content:'';position:absolute;left:92px;top:0;bottom:0;width:2px;background:var(--blue-200)}
+    .tl-item{display:flex;gap:1.3rem;margin-bottom:1.3rem;position:relative}
+    .tl-time{width:80px;flex-shrink:0;text-align:right;font-size:.76rem;font-weight:700;color:var(--blue-600);padding-top:.88rem}
+    .tl-dot{flex-shrink:0;width:16px;height:16px;border-radius:50%;background:var(--blue-700);border:3px solid #fff;box-shadow:0 0 0 2px var(--blue-300);margin-top:.9rem;position:relative;z-index:1}
+    .tl-dot.d-orange{background:var(--orange);box-shadow:0 0 0 2px rgba(232,119,34,.35)}
+    .tl-dot.d-gold{background:var(--gold);box-shadow:0 0 0 2px rgba(245,166,35,.35);width:20px;height:20px;margin-top:.8rem}
+    .tl-dot.d-purple{background:#8b5cf6;box-shadow:0 0 0 2px rgba(139,92,246,.35)}
+    .tl-dot.d-green{background:#16a34a;box-shadow:0 0 0 2px rgba(22,163,74,.35)}
+    .tl-card{flex:1;background:#fff;border-radius:var(--r);padding:.9rem 1.15rem;box-shadow:var(--sh-sm);border:1px solid rgba(0,48,135,.07);transition:box-shadow var(--tr),border-color var(--tr)}
+    .tl-card:hover{box-shadow:var(--sh);border-color:var(--blue-200)}
+    .tl-card.hl{border-left:3px solid var(--orange)}
+    .tl-card.hl-gold{border-left:3px solid var(--gold)}
+    .tl-ev{font-weight:600;color:var(--text);font-size:.92rem}
+    .tl-sp{font-size:.78rem;color:var(--muted);margin-top:.22rem}
+    .tl-dur{display:inline-block;font-size:.68rem;background:var(--blue-50);color:var(--blue-600);padding:.1rem .48rem;border-radius:50px;font-weight:700;margin-top:.35rem}
+
+    /* ── SPEAKERS ── */
+    #speakers{padding:5rem 0;background:#fff}
+    .spk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:1.4rem}
+    .spk-card{background:#fff;border-radius:var(--rlg);overflow:hidden;box-shadow:var(--sh);transition:transform var(--tr),box-shadow var(--tr);border:1px solid rgba(0,48,135,.06);text-align:center}
+    .spk-card:hover{transform:translateY(-6px);box-shadow:var(--sh-xl)}
+    .spk-card.keynote{border:2px solid var(--gold)}
+    .spk-photo{width:100%;aspect-ratio:1;overflow:hidden;background:var(--bg-sec)}
+    .spk-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .4s ease}
+    .spk-card:hover .spk-photo img{transform:scale(1.06)}
+    .spk-info{padding:.9rem}
+    .spk-name{font-weight:700;font-size:.92rem;color:var(--blue-800);line-height:1.3}
+    .spk-title{font-size:.72rem;color:var(--muted);margin-top:.18rem;line-height:1.4}
+    .spk-role{display:inline-block;margin-top:.5rem;font-size:.68rem;font-weight:700;padding:.18rem .55rem;border-radius:50px;background:var(--blue-100);color:var(--blue-700)}
+    .spk-role.r-keynote{background:var(--gold-lt);color:#c17c00}
+    .spk-role.r-demo{background:#f5f3ff;color:#7c3aed}
+    .spk-role.r-table{background:#f0fdf4;color:#15803d}
+    .spk-role.r-moderator{background:#fdf2f8;color:#9d174d}
+
+    /* ── REGISTER ── */
+    #register{padding:5rem 0;background:linear-gradient(140deg,var(--blue-900) 0%,var(--blue-700) 100%);position:relative;overflow:hidden}
+    #register::before{content:'';position:absolute;top:-40%;left:-30%;width:180%;height:180%;background:radial-gradient(ellipse,rgba(255,255,255,.04) 0%,transparent 60%)}
+    .reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
+    .reg-info .sec-title{color:#fff}
+    .reg-info .sec-title::after{background:var(--gold);margin-left:0;margin-right:auto}
+    .reg-info p{color:rgba(255,255,255,.78);margin:1.2rem 0;line-height:1.8}
+    .reg-bens{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin:1.4rem 0}
+    .reg-bens li{display:flex;align-items:center;gap:.7rem;color:rgba(255,255,255,.85);font-size:.88rem}
+    .chk{width:22px;height:22px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.75rem;flex-shrink:0}
+    .form-wrap{background:#fff;border-radius:var(--rlg);overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,.3);height:580px}
+    .form-wrap iframe{width:100%;height:100%;border:none}
+
+    /* ── LOCATION ── */
+    #location{padding:5rem 0;background:var(--bg-lt)}
+    .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+    .loc-card{background:#fff;border-radius:var(--rlg);padding:1.75rem;box-shadow:var(--sh)}
+    .loc-card h3{font-size:1.15rem;font-weight:700;color:var(--blue-700);margin-bottom:1.15rem}
+    .info-row{display:flex;align-items:flex-start;gap:.9rem;margin-bottom:.9rem;padding-bottom:.9rem;border-bottom:1px solid var(--bg-sec)}
+    .info-row:last-child{border:none;margin:0;padding:0}
+    .inf-ic{font-size:1.2rem;flex-shrink:0;width:34px;height:34px;background:var(--blue-50);border-radius:var(--rsm);display:flex;align-items:center;justify-content:center}
+    .inf-ct strong{display:block;font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:.18rem}
+    .inf-ct p{font-size:.88rem;color:var(--text);line-height:1.5}
+    .map-wrap{border-radius:var(--rlg);overflow:hidden;box-shadow:var(--sh-lg);height:390px}
+    .map-wrap iframe{width:100%;height:100%;border:none}
+
+    /* ── PARTNERS ── */
+    #partners{padding:4.5rem 0;background:#fff}
+    .partners-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2rem 3rem}
+    .partner-logo{display:flex;flex-direction:column;align-items:center;gap:.4rem;opacity:.72;transition:opacity var(--tr),transform var(--tr)}
+    .partner-logo:hover{opacity:1;transform:scale(1.06)}
+    .partner-logo img{height:52px;width:auto;max-width:125px;object-fit:contain}
+    .partner-logo span{font-size:.68rem;font-weight:600;color:var(--muted);text-align:center}
+
+    /* ── LIVE STREAM ── */
+    #livestream{padding:1.5rem 0 3.5rem;background:var(--dark)}
+    .live-hdr{text-align:center;padding:1.5rem 0 1.25rem}
+    .live-hdr-title{font-size:1.4rem;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;gap:.75rem}
+    .player-wrap{background:#000;border-radius:var(--rlg);overflow:hidden;aspect-ratio:16/9;max-width:880px;margin:0 auto;box-shadow:0 25px 60px rgba(0,0,0,.55)}
+    .player-wrap iframe{width:100%;height:100%;border:none}
+    .player-ph{width:100%;height:100%;background:linear-gradient(135deg,#0d1117,#1a2332);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:rgba(255,255,255,.35);font-size:.9rem}
+    .player-ph .ph-icon{font-size:3.5rem;opacity:.3}
+    #live-sched{padding:2rem 0;background:var(--blue-900)}
+    .live-now-box{background:rgba(255,68,68,.12);border:1px solid rgba(255,68,68,.3);border-radius:var(--r);padding:.9rem 1.3rem;margin-bottom:.9rem}
+    .lnow-lbl{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#ff7070;display:flex;align-items:center;gap:.45rem;margin-bottom:.45rem}
+    .lnow-title{font-weight:600;color:#fff;font-size:1rem}
+    .lnow-spk{font-size:.82rem;color:rgba(255,255,255,.6);margin-top:.2rem}
+    .live-next{display:flex;gap:.9rem;flex-wrap:wrap}
+    .ln-item{background:rgba(255,255,255,.06);border-radius:var(--rsm);padding:.7rem .9rem;flex:1;min-width:140px;border:1px solid rgba(255,255,255,.07)}
+    .ln-time{font-size:.72rem;font-weight:700;color:var(--gold)}
+    .ln-title{font-size:.82rem;color:rgba(255,255,255,.72);margin-top:.18rem}
+
+    /* ── Q&A ── */
+    #qna{padding:2.5rem 0;background:var(--blue-950)}
+    .qna-inner{text-align:center;max-width:580px;margin:0 auto}
+    .qna-inner h3{color:#fff;font-size:1.25rem;margin-bottom:.6rem}
+    .qna-inner p{color:rgba(255,255,255,.65);margin-bottom:1.3rem;font-size:.9rem}
+
+    /* ── REPLAYS ── */
+    #replays{padding:5rem 0;background:#fff}
+    .replays-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+    .replay-card{background:#fff;border-radius:var(--rlg);overflow:hidden;box-shadow:var(--sh);transition:transform var(--tr),box-shadow var(--tr)}
+    .replay-card:hover{transform:translateY(-4px);box-shadow:var(--sh-xl)}
+    .replay-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,var(--blue-900),var(--blue-700));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .replay-thumb img{width:100%;height:100%;object-fit:cover}
+    .play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+    .play-circle{width:54px;height:54px;background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--blue-700);box-shadow:0 4px 20px rgba(0,0,0,.3);transition:transform var(--tr)}
+    .replay-card:hover .play-circle{transform:scale(1.1)}
+    .replay-info{padding:1.15rem}
+    .replay-title{font-weight:700;color:var(--blue-800);margin-bottom:.25rem;font-size:.93rem}
+    .replay-spk{font-size:.78rem;color:var(--muted)}
+    .replay-dur{font-size:.72rem;font-weight:700;color:var(--blue-500);margin-top:.45rem}
+    .coming-soon{background:var(--bg-lt);border:2px dashed var(--blue-200);border-radius:var(--rlg);padding:3rem 2rem;text-align:center;color:var(--muted)}
+    .coming-soon p{font-size:1rem;font-weight:500;color:var(--blue-600)}
+    .coming-soon small{font-size:.82rem;display:block;margin-top:.4rem}
+
+    /* ── GALLERY ── */
+    #gallery{padding:5rem 0;background:var(--bg-lt)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+    .gal-item{aspect-ratio:4/3;background:var(--bg-sec);border-radius:var(--r);overflow:hidden}
+    .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+    .gal-item:hover img{transform:scale(1.06)}
+    .gal-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--blue-300);font-size:2rem;background:var(--bg-sec)}
+
+    /* ── POST SUMMARY ── */
+    #post-summary{padding:5rem 0;background:#fff}
+    .sum-content{max-width:800px;margin:0 auto}
+    .sum-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin:2.5rem 0}
+    .hl-card{text-align:center;padding:1.75rem 1rem;background:var(--bg-lt);border-radius:var(--rlg)}
+    .hl-num{font-size:2.4rem;font-weight:800;color:var(--blue-700)}
+    .hl-lbl{font-size:.82rem;color:var(--muted);margin-top:.25rem}
+    .sum-text p{color:var(--text);line-height:1.85;margin-bottom:1rem}
+
+    /* ── FOOTER ── */
+    footer{background:var(--blue-950);color:rgba(255,255,255,.6);padding:3rem 0 1.5rem}
+    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+    .foot-brand img{height:38px;filter:brightness(0) invert(1);opacity:.75;margin-bottom:.9rem}
+    .foot-brand p{font-size:.83rem;line-height:1.7}
+    .foot-col h4{color:#fff;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.9rem}
+    .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+    .foot-col ul li a{color:rgba(255,255,255,.5);font-size:.83rem;transition:color var(--tr)}
+    .foot-col ul li a:hover{color:var(--gold)}
+    .foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.9rem;font-size:.78rem}
+    .socials{display:flex;gap:.6rem}
+    .soc-lnk{width:34px;height:34px;background:rgba(255,255,255,.08);border-radius:var(--rsm);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:background var(--tr),color var(--tr)}
+    .soc-lnk:hover{background:var(--orange);color:#fff}
+    .hashtag{color:var(--gold);font-weight:600}
+
+    /* ── MOBILE NAV ── */
+    .mob-nav{display:none;position:fixed;inset:0;background:var(--blue-950);z-index:998;flex-direction:column;align-items:center;justify-content:center;gap:.9rem}
+    .mob-nav.open{display:flex}
+    .mob-nav a{color:#fff;font-size:1.2rem;font-weight:600;padding:.7rem 2rem}
+    .mob-close{position:absolute;top:1.4rem;right:1.4rem;font-size:1.5rem;color:#fff;cursor:pointer;background:none;border:none}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1024px){
+      .about-grid,.reg-grid,.loc-grid{grid-template-columns:1fr;gap:2.5rem}
+      .form-wrap{height:500px}
+      .foot-grid{grid-template-columns:1fr 1fr}
+      .foot-brand{grid-column:1/-1}
+    }
+    @media(max-width:768px){
+      #phase-bar{margin-top:60px}
+      .hero-grid{grid-template-columns:1fr}
+      .cdown-widget,.live-widget,.post-widget{min-width:unset;margin-top:1.5rem}
+      .nav-links,.nav-reg{display:none}
+      .hamburger{display:flex}
+      .spk-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+      .timeline::before{left:68px}
+      .tl-time{width:58px;font-size:.7rem}
+      .sum-highlights{grid-template-columns:1fr 1fr}
+      .foot-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:480px){
+      .hero-title{font-size:1.75rem}
+      .cdown-num{font-size:2rem}
+      .hero-actions{flex-direction:column}
+      .hero-actions .btn{justify-content:center}
+      .sum-highlights{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body data-phase="pre" data-lang="fr">
+
+<!-- ══════════════════════════════════════════════════
+     MOBILE NAV
+══════════════════════════════════════════════════ -->
+<nav class="mob-nav" id="mob-nav">
+  <button class="mob-close" onclick="closeMobNav()">✕</button>
+  <a href="#about" onclick="closeMobNav()" data-i18n="nav.about">À propos</a>
+  <a href="#program" onclick="closeMobNav()" data-i18n="nav.program">Programme</a>
+  <a href="#speakers" onclick="closeMobNav()" data-i18n="nav.speakers">Intervenants</a>
+  <a href="#register" onclick="closeMobNav()" data-i18n="nav.register">S'inscrire</a>
+  <a href="#location" onclick="closeMobNav()" data-i18n="nav.location">Lieu</a>
+  <a href="#partners" onclick="closeMobNav()" data-i18n="nav.partners">Partenaires</a>
+  <div style="margin-top:1rem">
+    <div class="lang-toggle" style="justify-content:center">
+      <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <div class="nav-brand">
+      <img src="Photos/Region8_Logo_RGB_Blue-Stacked.png" alt="IEEE Region 8">
+      <div class="nav-brand-text">
+        IEEE AMT Day 2026
+        <span>ESP / UCAD — Dakar</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+      <li><a href="#program" data-i18n="nav.program">Programme</a></li>
+      <li><a href="#speakers" data-i18n="nav.speakers">Intervenants</a></li>
+      <li><a href="#location" data-i18n="nav.location">Lieu</a></li>
+      <li><a href="#partners" data-i18n="nav.partners">Partenaires</a></li>
+    </ul>
+    <div class="nav-ctrl">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#register" class="nav-reg" data-i18n="nav.register">S'inscrire</a>
+      <div class="hamburger" onclick="openMobNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════
+     PHASE BAR
+══════════════════════════════════════════════════ -->
+<div id="phase-bar">
+  <div class="phase-sw">
+    <button class="phase-btn active" data-phase="pre" onclick="setPhase('pre')">
+      <span data-i18n="phase.pre">Avant l'événement</span>
+    </button>
+    <button class="phase-btn" data-phase="live" onclick="setPhase('live')">
+      <span class="pulse-dot"></span>
+      <span data-i18n="phase.live">En direct</span>
+    </button>
+    <button class="phase-btn" data-phase="post" onclick="setPhase('post')">
+      <span data-i18n="phase.post">Après l'événement</span>
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-wave"></div>
+  <div class="container hero-grid">
+    <!-- Left: text -->
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="hero-badge">📅 13 Mai 2026</span>
+        <span class="hero-badge ieee-badge">IEEE AP-S &amp; MTT-S</span>
+      </div>
+      <h1 class="hero-title">
+        IEEE <span class="accent">Antenna &amp; Microwave</span> Tech Day 2026
+      </h1>
+      <p class="hero-sub">
+        <span class="lang-fr">« Antennes, IoT et Sans Fil pour le Développement »</span>
+        <span class="lang-en" hidden>« Antennas, IoT and Wireless for Development »</span>
+      </p>
+      <div class="hero-meta">
+        <span class="hero-meta-item"><span class="meta-icon">📅</span> 13 Mai / May 2026</span>
+        <span class="hero-meta-item"><span class="meta-icon">🕑</span> 14h30 – 18h30</span>
+        <span class="hero-meta-item"><span class="meta-icon">📍</span>
+          <span class="lang-fr">ESP, UCAD — Dakar, Sénégal</span>
+          <span class="lang-en" hidden>ESP, UCAD — Dakar, Senegal</span>
+        </span>
+      </div>
+      <div class="hero-actions">
+        <a href="#register" class="btn btn-primary">
+          ✏️ <span data-i18n="btn.register">S'inscrire — Inscription gratuite</span>
+        </a>
+        <a href="#program" class="btn btn-outline">
+          📋 <span data-i18n="btn.program">Voir le programme</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: phase-specific widget -->
+    <!-- PRE-EVENT: countdown -->
+    <div data-phases="pre">
+      <div class="cdown-widget">
+        <div class="cdown-lbl" data-i18n="cdown.label">Compte à rebours</div>
+        <div class="cdown-grid">
+          <div class="cdown-item">
+            <div class="cdown-num" id="cd-days">--</div>
+            <div class="cdown-unit" data-i18n="cdown.days">Jours</div>
+          </div>
+          <div class="cdown-item">
+            <div class="cdown-num" id="cd-hours">--</div>
+            <div class="cdown-unit" data-i18n="cdown.hours">Heures</div>
+          </div>
+          <div class="cdown-item">
+            <div class="cdown-num" id="cd-min">--</div>
+            <div class="cdown-unit" data-i18n="cdown.minutes">Minutes</div>
+          </div>
+          <div class="cdown-item">
+            <div class="cdown-num" id="cd-sec">--</div>
+            <div class="cdown-unit" data-i18n="cdown.seconds">Secondes</div>
+          </div>
+        </div>
+        <div class="cdown-note" data-i18n="cdown.note">avant le lancement de l'événement</div>
+      </div>
+    </div>
+
+    <!-- LIVE: streaming widget -->
+    <div data-phases="live">
+      <div class="live-widget">
+        <div class="live-badge"><span class="pulse-dot"></span> EN DIRECT / LIVE</div>
+        <p class="lang-fr">L'événement est en cours ! Regardez la diffusion en direct ci-dessous.</p>
+        <p class="lang-en" hidden>The event is live! Watch the stream below.</p>
+        <a href="#livestream" class="btn btn-primary">▶ Regarder / Watch</a>
+      </div>
+    </div>
+
+    <!-- POST: replay widget -->
+    <div data-phases="post">
+      <div class="post-widget">
+        <div class="big">🎉</div>
+        <p class="lang-fr" style="font-weight:700;font-size:1rem;margin-top:.5rem;color:#fff">Événement terminé !</p>
+        <p class="lang-en" hidden style="font-weight:700;font-size:1rem;margin-top:.5rem;color:#fff">Event completed!</p>
+        <p class="lang-fr">Retrouvez les replays, photos et le compte-rendu.</p>
+        <p class="lang-en" hidden>Find replays, photos and the event summary below.</p>
+        <a href="#replays" class="btn btn-primary" style="margin-top:1rem">
+          <span class="lang-fr">Voir les replays</span>
+          <span class="lang-en" hidden>View replays</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     LIVE STREAM
+══════════════════════════════════════════════════ -->
+<section id="livestream" data-phases="live">
+  <div class="live-hdr">
+    <div class="live-hdr-title">
+      <span class="pulse-dot"></span>
+      <span class="lang-fr">Diffusion en direct</span>
+      <span class="lang-en" hidden>Live Broadcast</span>
+      <span class="pulse-dot"></span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="player-wrap">
+      <!-- Replace the src URL below with the actual YouTube/Vimeo live link -->
+      <div class="player-ph">
+        <div class="ph-icon">▶</div>
+        <div class="lang-fr">Le lien de diffusion sera activé le 13 Mai 2026</div>
+        <div class="lang-en" hidden>The broadcast link will be activated on May 13, 2026</div>
+        <small style="opacity:.6" class="lang-fr">Actualiser la page une fois le direct commencé</small>
+        <small style="opacity:.6" class="lang-en" hidden>Refresh this page once the broadcast begins</small>
+      </div>
+      <!-- When ready, replace the div.player-ph above with:
+      <iframe src="https://www.youtube.com/embed/LIVE_VIDEO_ID?autoplay=1" allowfullscreen allow="autoplay"></iframe>
+      -->
+    </div>
+  </div>
+</section>
+
+<!-- Live schedule bar -->
+<section id="live-sched" data-phases="live">
+  <div class="container">
+    <div class="live-now-box">
+      <div class="lnow-lbl"><span class="pulse-dot"></span>
+        <span class="lang-fr">En cours maintenant</span>
+        <span class="lang-en" hidden>Currently live</span>
+      </div>
+      <div class="lnow-title" id="live-now-title">—</div>
+      <div class="lnow-spk" id="live-now-spk">—</div>
+    </div>
+    <div class="live-next" id="live-next-list"></div>
+  </div>
+</section>
+
+<!-- Q&A -->
+<section id="qna" data-phases="live">
+  <div class="container qna-inner">
+    <h3 class="lang-fr">💬 Posez vos questions</h3>
+    <h3 class="lang-en" hidden>💬 Ask your questions</h3>
+    <p class="lang-fr">Utilisez le chat en direct ou soumettez vos questions via Slido ou le formulaire Q&A.</p>
+    <p class="lang-en" hidden>Use the live chat or submit your questions via Slido or the Q&A form.</p>
+    <a href="#" class="btn btn-primary lang-fr">Accéder au Q&A</a>
+    <a href="#" class="btn btn-primary lang-en" hidden>Join Q&A</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════════════ -->
+<section id="about" data-phases="pre live post">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Left: description -->
+      <div class="about-text">
+        <div class="lang-fr">
+          <h2 class="sec-title">À propos de l'événement</h2>
+          <p>Le <strong>IEEE Antenna &amp; Microwave Tech Day 2026</strong> est un après-midi thématique organisé par le Laboratoire LITA de l'ESP/UCAD, en partenariat avec l'ASCII, la Section IEEE Sénégal, l'IEEE AP-S et l'IEEE MTT-S.</p>
+          <p>Sous le thème <em>« Antennes, IoT et Sans Fil pour le Développement »</em>, cet événement réunit chercheurs, étudiants, ingénieurs, industriels et décideurs autour des technologies RF, antennes et IoT au service du développement durable en Afrique de l'Ouest.</p>
+          <h3 style="margin-top:1.5rem;margin-bottom:.75rem;color:var(--blue-700);font-size:1.05rem">Objectifs</h3>
+          <ul class="about-objs">
+            <li><span class="obj-ic">1</span><span>Présenter les avancées en antennes intelligentes, systèmes RF, FSO et IoT pour le développement</span></li>
+            <li><span class="obj-ic">2</span><span>Démonstrations en direct : chaîne IoT complète et mesures d'antennes &amp; caractérisation RF</span></li>
+            <li><span class="obj-ic">3</span><span>Valoriser les recherches doctorales via une session posters avec prix du meilleur poster</span></li>
+            <li><span class="obj-ic">4</span><span>Débat de fond en table ronde : académiques, industriels et institutionnels</span></li>
+            <li><span class="obj-ic">5</span><span>Renforcer les liens de la communauté IEEE Sénégal avec l'écosystème numérique local</span></li>
+          </ul>
+        </div>
+        <div class="lang-en" hidden>
+          <h2 class="sec-title">About the Event</h2>
+          <p>The <strong>IEEE Antenna &amp; Microwave Tech Day 2026</strong> is a themed afternoon organized by the LITA Laboratory at ESP/UCAD, in partnership with ASCII, the IEEE Senegal Section, IEEE AP-S, and IEEE MTT-S.</p>
+          <p>Under the theme <em>"Antennas, IoT and Wireless for Development"</em>, this event brings together researchers, students, engineers, industry professionals, and policy makers around RF, antenna, and IoT technologies for sustainable development in West Africa.</p>
+          <h3 style="margin-top:1.5rem;margin-bottom:.75rem;color:var(--blue-700);font-size:1.05rem">Objectives</h3>
+          <ul class="about-objs">
+            <li><span class="obj-ic">1</span><span>Present advances in smart antennas, RF systems, FSO and IoT for development</span></li>
+            <li><span class="obj-ic">2</span><span>Live demos: full IoT chain from sensor to cloud, and RF antenna measurements</span></li>
+            <li><span class="obj-ic">3</span><span>Showcase doctoral research through a poster session with best poster award</span></li>
+            <li><span class="obj-ic">4</span><span>In-depth roundtable: academics, industry professionals, and policymakers</span></li>
+            <li><span class="obj-ic">5</span><span>Strengthen IEEE Senegal community ties with the local digital ecosystem</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right: stats -->
+      <div class="stats-col">
+        <div class="stat-card">
+          <div class="stat-num">80–120</div>
+          <div class="stat-lbl lang-fr">Participants attendus</div>
+          <div class="stat-lbl lang-en" hidden>Expected attendees</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3+</div>
+          <div class="stat-lbl lang-fr">Conférences de haut niveau</div>
+          <div class="stat-lbl lang-en" hidden>High-level talks</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">2</div>
+          <div class="stat-lbl lang-fr">Démonstrations en direct</div>
+          <div class="stat-lbl lang-en" hidden>Live demonstrations</div>
+        </div>
+        <div class="stat-card" style="border-color:var(--orange)">
+          <div class="stat-num" style="color:var(--orange)">5</div>
+          <div class="stat-lbl lang-fr">Panélistes à la table ronde</div>
+          <div class="stat-lbl lang-en" hidden>Round table panelists</div>
+        </div>
+        <div>
+          <p style="font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.6rem" class="lang-fr">Public cible</p>
+          <p style="font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.6rem" class="lang-en" hidden>Target audience</p>
+          <div class="aud-tags">
+            <span class="tag tag-blue lang-fr">Chercheurs</span>
+            <span class="tag tag-blue lang-en" hidden>Researchers</span>
+            <span class="tag tag-blue lang-fr">Doctorants</span>
+            <span class="tag tag-blue lang-en" hidden>PhD Students</span>
+            <span class="tag tag-blue lang-fr">Ingénieurs RF/IoT</span>
+            <span class="tag tag-blue lang-en" hidden>RF/IoT Engineers</span>
+            <span class="tag tag-orange lang-fr">Industriels</span>
+            <span class="tag tag-orange lang-en" hidden>Industry</span>
+            <span class="tag tag-orange lang-fr">Institutionnels</span>
+            <span class="tag tag-orange lang-en" hidden>Policy Makers</span>
+            <span class="tag tag-blue lang-fr">Membres IEEE</span>
+            <span class="tag tag-blue lang-en" hidden>IEEE Members</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     PROGRAM
+══════════════════════════════════════════════════ -->
+<section id="program" data-phases="pre live post">
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="sec-title center lang-fr">Programme de l'après-midi</h2>
+      <h2 class="sec-title center lang-en" hidden>Afternoon Program</h2>
+      <p class="sec-sub lang-fr" style="margin-inline:auto">13 Mai 2026 · 14h30 – 18h30 · Amphithéâtre ESP/UCAD</p>
+      <p class="sec-sub lang-en" hidden style="margin-inline:auto">May 13, 2026 · 2:30 PM – 6:30 PM · ESP/UCAD Amphitheater</p>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-time">14:30</div>
+        <div class="tl-dot d-orange"></div>
+        <div class="tl-card hl">
+          <div class="tl-ev lang-fr">🎙️ Ouverture officielle</div>
+          <div class="tl-ev lang-en" hidden>🎙️ Official Opening</div>
+          <div class="tl-sp lang-fr">Directeur ESP/UCAD · LITA · IEEE Sénégal &amp; ASCII</div>
+          <div class="tl-sp lang-en" hidden>Director ESP/UCAD · LITA · IEEE Senegal &amp; ASCII</div>
+          <span class="tl-dur">10 min</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">14:40</div>
+        <div class="tl-dot d-gold"></div>
+        <div class="tl-card hl-gold">
+          <div class="tl-ev lang-fr">⭐ Keynote — « Des antennes intelligentes à l'IoT frugal : quels défis pour l'Afrique connectée ? »</div>
+          <div class="tl-ev lang-en" hidden>⭐ Keynote — "Smart Antennas to Frugal IoT: What Challenges for Connected Africa?"</div>
+          <div class="tl-sp">Pr Ibra DIOUM · ESP/UCAD</div>
+          <span class="tl-dur">25 min</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">15:05</div>
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-ev lang-fr">📡 Talk 1 — IoT &amp; capteurs EM pour le développement durable</div>
+          <div class="tl-ev lang-en" hidden>📡 Talk 1 — IoT &amp; EM Sensors for Sustainable Development</div>
+          <div class="tl-sp">Dr Pape Abdoulaye FAM</div>
+          <span class="tl-dur">15 min</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">15:20</div>
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-ev lang-fr">💡 Talk 2 — Communications optiques sans fil (FSO) : une alternative pour le dernier kilomètre</div>
+          <div class="tl-ev lang-en" hidden>💡 Talk 2 — Free-Space Optics (FSO): A Last-Mile Alternative</div>
+          <div class="tl-sp">Dr Mangoné FALL</div>
+          <span class="tl-dur">15 min</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">15:35</div>
+        <div class="tl-dot d-orange"></div>
+        <div class="tl-card">
+          <div class="tl-ev lang-fr">💬 Discussion &amp; questions</div>
+          <div class="tl-ev lang-en" hidden>💬 Discussion &amp; Q&amp;A</div>
+          <div class="tl-sp lang-fr">Échanges ouverts avec les conférenciers</div>
+          <div class="tl-sp lang-en" hidden>Open exchange with speakers</div>
+          <span class="tl-dur">10 min</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">15:45</div>
+        <div class="tl-dot d-purple"></div>
+        <div class="tl-card hl">
+          <div class="tl-ev lang-fr">🔧 Démo 1 — Du capteur au cloud en 30 min</div>
+          <div class="tl-ev lang-en" hidden>🔧 Demo 1 — From Sensor to Cloud in 30 min</div>
+          <div class="tl-sp lang-fr">Dr Ousmane SADIO — Chaîne IoT complète en direct</div>
+          <div class="tl-sp lang-en" hidden>Dr Ousmane SADIO — Full IoT chain live demonstration</div>
+          <span class="tl-dur">30 min</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">16:15</div>
+        <div class="tl-dot d-purple"></div>
+        <div class="tl-card hl">
+          <div class="tl-ev lang-fr">📻 Démo 2 — Mesures d'antennes &amp; caractérisation RF</div>
+          <div class="tl-ev lang-en" hidden>📻 Demo 2 — Antenna Measurements &amp; RF Characterization</div>
+          <div class="tl-sp lang-fr">Dr Pape Waly SARR — VNA, abaque de Smith en direct</div>
+          <div class="tl-sp lang-en" hidden>Dr Pape Waly SARR — Live VNA, Smith chart demo</div>
+          <span class="tl-dur">30 min</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">16:45</div>
+        <div class="tl-dot d-green"></div>
+        <div class="tl-card">
+          <div class="tl-ev lang-fr">🎓 Session Posters &amp; Démonstrations doctorales</div>
+          <div class="tl-ev lang-en" hidden>🎓 Poster Session &amp; Doctoral Demonstrations</div>
+          <div class="tl-sp lang-fr">Doctorants &amp; ingénieurs ESP — Prix du meilleur poster</div>
+          <div class="tl-sp lang-en" hidden>ESP PhD students &amp; engineers — Best poster award</div>
+          <span class="tl-dur">30 min</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">17:15</div>
+        <div class="tl-dot d-orange"></div>
+        <div class="tl-card hl">
+          <div class="tl-ev lang-fr">🗣️ Table ronde — « Antennes et IoT : quelles priorités pour l'Afrique de l'Ouest ? »</div>
+          <div class="tl-ev lang-en" hidden>🗣️ Round Table — "Antennas and IoT: What Priorities for West Africa?"</div>
+          <div class="tl-sp lang-fr">Niang · Diallo · Mbacké · Diop · Diongue · Modérateur : Pr Ibra DIOUM</div>
+          <div class="tl-sp lang-en" hidden>Niang · Diallo · Mbacké · Diop · Diongue · Moderator: Pr Ibra DIOUM</div>
+          <span class="tl-dur">55 min</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">18:10</div>
+        <div class="tl-dot d-gold"></div>
+        <div class="tl-card hl-gold">
+          <div class="tl-ev lang-fr">🏆 Remise de prix, clôture &amp; cocktail de networking</div>
+          <div class="tl-ev lang-en" hidden>🏆 Awards, Closing Ceremony &amp; Networking Cocktail</div>
+          <div class="tl-sp lang-fr">Hall de l'ESP</div>
+          <div class="tl-sp lang-en" hidden>ESP Hall</div>
+          <span class="tl-dur">20 min</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     SPEAKERS
+══════════════════════════════════════════════════ -->
+<section id="speakers" data-phases="pre live post">
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="sec-title center lang-fr">Intervenants</h2>
+      <h2 class="sec-title center lang-en" hidden>Speakers</h2>
+      <p class="sec-sub lang-fr" style="margin-inline:auto">Chercheurs, experts et innovateurs réunis pour un après-midi d'exception</p>
+      <p class="sec-sub lang-en" hidden style="margin-inline:auto">Researchers, experts and innovators gathered for an exceptional afternoon</p>
+    </div>
+    <div class="spk-grid">
+
+      <!-- Keynote -->
+      <div class="spk-card keynote">
+        <div class="spk-photo">
+          <img src="img_clean/ibra_dioum.jpg" alt="Pr Ibra DIOUM" loading="lazy">
+        </div>
+        <div class="spk-info">
+          <div class="spk-name">Pr Ibra DIOUM</div>
+          <div class="spk-title lang-fr">Professeur Titulaire · ESP/UCAD<br>Directeur Adjoint LITA</div>
+          <div class="spk-title lang-en" hidden>Full Professor · ESP/UCAD<br>Deputy Director, LITA</div>
+          <span class="spk-role r-keynote">⭐ Keynote</span>
+        </div>
+      </div>
+
+      <!-- Talk 1 -->
+      <div class="spk-card">
+        <div class="spk-photo">
+          <img src="img_clean/pape_abdoulaye_fam.jpg" alt="Dr Pape Abdoulaye FAM" loading="lazy">
+        </div>
+        <div class="spk-info">
+          <div class="spk-name">Dr Pape Abdoulaye FAM</div>
+          <div class="spk-title lang-fr">Enseignant-Chercheur · ESP/UCAD<br>Expert Télécoms &amp; IoT</div>
+          <div class="spk-title lang-en" hidden>Lecturer-Researcher · ESP/UCAD<br>Telecom &amp; IoT Expert</div>
+          <span class="spk-role">Talk 1 — IoT &amp; Capteurs EM</span>
+        </div>
+      </div>
+
+      <!-- Talk 2 -->
+      <div class="spk-card">
+        <div class="spk-photo">
+          <img src="img_clean/mangone_fall_new.jpg" alt="Dr Mangoné FALL" loading="lazy" onerror="this.src='img_clean/Mangone_Fall.png'">
+        </div>
+        <div class="spk-info">
+          <div class="spk-name">Dr Mangoné FALL</div>
+          <div class="spk-title lang-fr">Enseignant-Chercheur · ESP/UCAD<br>Expert en communication optique sans fil et filaire</div>
+          <div class="spk-title lang-en" hidden>Lecturer-Researcher · ESP/UCAD<br>Expert in Wired &amp; Wireless Optical Communications</div>
+          <span class="spk-role">Talk 2 — FSO</span>
+        </div>
+      </div>
+
+      <!-- Demo 1 -->
+      <div class="spk-card">
+        <div class="spk-photo">
+          <img src="Photos/OUSMANE SADIO.jpg" alt="Dr Ousmane SADIO" loading="lazy">
+        </div>
+        <div class="spk-info">
+          <div class="spk-name">Dr Ousmane SADIO</div>
+          <div class="spk-title lang-fr">Enseignant-Chercheur · FST/UCAD<br>Expert IoT &amp; Laboratoires mobiles</div>
+          <div class="spk-title lang-en" hidden>Lecturer-Researcher · FST/UCAD<br>Expert in IoT &amp; Mobile Labs</div>
+          <span class="spk-role r-demo lang-fr">Démo 1 — IoT Live</span>
+          <span class="spk-role r-demo lang-en" hidden>Demo 1 — IoT Live</span>
+        </div>
+      </div>
+
+      <!-- Demo 2 -->
+      <div class="spk-card">
+        <div class="spk-photo">
+          <img src="img_clean/pape_waly_sarr.jpg" alt="Dr Pape Waly SARR" loading="lazy">
+        </div>
+        <div class="spk-info">
+          <div class="spk-name">Dr Pape Waly SARR</div>
+          <div class="spk-title lang-fr">Enseignant-Chercheur · ESP/UCAD<br>Expert en conception et mesure d'antennes</div>
+          <div class="spk-title lang-en" hidden>Lecturer-Researcher · ESP/UCAD<br>Expert in Antenna Design &amp; Measurement</div>
+          <span class="spk-role r-demo lang-fr">Démo 2 — RF/Antennes</span>
+          <span class="spk-role r-demo lang-en" hidden>Demo 2 — RF/Antennas</span>
+        </div>
+      </div>
+
+      <!-- Table ronde: Boudal NIANG -->
+      <div class="spk-card">
+        <div class="spk-photo">
+          <img src="img_clean/Boudal-Niang.png" alt="Dr Boudal NIANG" loading="lazy">
+        </div>
+        <div class="spk-info">
+          <div class="spk-name">Dr Boudal NIANG</div>
+          <div class="spk-title lang-fr">Maître de Conférences<br>Expert Télécoms</div>
+          <div class="spk-title lang-en" hidden>Associate Professor<br>Telecom Expert</div>
+          <span class="spk-role r-table lang-fr">Table ronde</span>
+          <span class="spk-role r-table lang-en" hidden>Round Table</span>
+        </div>
+      </div>
+
+      <!-- Table ronde: Moussa DIALLO -->
+      <div class="spk-card">
+        <div class="spk-photo">
+          <img src="img_clean/moussa_diallo.jpg" alt="Pr Moussa DIALLO" loading="lazy">
+        </div>
+        <div class="spk-info">
+          <div class="spk-name">Pr Moussa DIALLO</div>
+          <div class="spk-title lang-fr">Professeur Titulaire<br>Expert IoT</div>
+          <div class="spk-title lang-en" hidden>Full Professor<br>IoT Expert</div>
+          <span class="spk-role r-table lang-fr">Table ronde</span>
+          <span class="spk-role r-table lang-en" hidden>Round Table</span>
+        </div>
+      </div>
+
+      <!-- Table ronde: Ahmath Bamba MBACKÉ -->
+      <div class="spk-card">
+        <div class="spk-photo">
+          <img src="img_clean/ahmath_bamba_mbacke.jpg" alt="M. Ahmath Bamba MBACKÉ" loading="lazy">
+        </div>
+        <div class="spk-info">
+          <div class="spk-name">M. Ahmath Bamba MBACKÉ</div>
+          <div class="spk-title lang-fr">Expert en Industrie Numérique<br>Président ISOC Sénégal</div>
+          <div class="spk-title lang-en" hidden>Digital Industry Expert<br>President, ISOC Senegal</div>
+          <span class="spk-role r-table lang-fr">Table ronde</span>
+          <span class="spk-role r-table lang-en" hidden>Round Table</span>
+        </div>
+      </div>
+
+      <!-- Table ronde: Idy DIOP -->
+      <div class="spk-card">
+        <div class="spk-photo">
+          <img src="img_clean/idy_diop.jpg" alt="Pr Idy DIOP" loading="lazy">
+        </div>
+        <div class="spk-info">
+          <div class="spk-name">Pr Idy DIOP</div>
+          <div class="spk-title lang-fr">Professeur Titulaire<br>Expert Télécoms</div>
+          <div class="spk-title lang-en" hidden>Full Professor<br>Telecom Expert</div>
+          <span class="spk-role r-table lang-fr">Table ronde</span>
+          <span class="spk-role r-table lang-en" hidden>Round Table</span>
+        </div>
+      </div>
+
+      <!-- Table ronde: Dame DIONGUE -->
+      <div class="spk-card">
+        <div class="spk-photo">
+          <img src="Photos/dame_diongue.jpg" alt="Dr Dame DIONGUE" loading="lazy">
+        </div>
+        <div class="spk-info">
+          <div class="spk-name">Dr Dame DIONGUE</div>
+          <div class="spk-title lang-fr">Président Sous-Section IEEE Sénégal</div>
+          <div class="spk-title lang-en" hidden>Chair, IEEE Senegal Subsection</div>
+          <span class="spk-role r-table lang-fr">Table ronde</span>
+          <span class="spk-role r-table lang-en" hidden>Round Table</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     REGISTRATION (PRE-EVENT ONLY)
+══════════════════════════════════════════════════ -->
+<section id="register" data-phases="pre">
+  <div class="container reg-grid">
+    <div class="reg-info">
+      <h2 class="sec-title lang-fr">Inscription gratuite</h2>
+      <h2 class="sec-title lang-en" hidden>Free Registration</h2>
+      <p class="lang-fr">Participez à cet événement unique dédié aux technologies d'antennes, de micro-ondes et de l'IoT en Afrique de l'Ouest. Places limitées !</p>
+      <p class="lang-en" hidden>Join this unique event dedicated to antenna, microwave, and IoT technologies in West Africa. Limited seats available!</p>
+      <ul class="reg-bens">
+        <li><span class="chk">✓</span>
+          <span class="lang-fr">Accès à toutes les conférences et démonstrations</span>
+          <span class="lang-en" hidden>Access to all talks and live demonstrations</span>
+        </li>
+        <li><span class="chk">✓</span>
+          <span class="lang-fr">Session posters &amp; networking</span>
+          <span class="lang-en" hidden>Poster session &amp; networking</span>
+        </li>
+        <li><span class="chk">✓</span>
+          <span class="lang-fr">Table ronde avec experts &amp; industriels</span>
+          <span class="lang-en" hidden>Round table with experts &amp; industry</span>
+        </li>
+        <li><span class="chk">✓</span>
+          <span class="lang-fr">Attestation de participation IEEE</span>
+          <span class="lang-en" hidden>IEEE participation certificate</span>
+        </li>
+        <li><span class="chk">✓</span>
+          <span class="lang-fr">Cocktail de networking &amp; rafraîchissements</span>
+          <span class="lang-en" hidden>Networking cocktail &amp; refreshments</span>
+        </li>
+      </ul>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScdb90MPJNQY8wIC19b9M-WZVXeH6oOaryYgZymnsQ49mIUsA/viewform" target="_blank" class="btn btn-primary" style="margin-top:.5rem">
+        <span class="lang-fr">✏️ Ouvrir le formulaire d'inscription</span>
+        <span class="lang-en" hidden>✏️ Open registration form</span>
+      </a>
+    </div>
+    <div class="form-wrap">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScdb90MPJNQY8wIC19b9M-WZVXeH6oOaryYgZymnsQ49mIUsA/viewform?embedded=true" title="Registration Form" loading="lazy">
+        <div style="padding:2rem;text-align:center">
+          <p class="lang-fr">Chargement du formulaire…</p>
+          <p class="lang-en" hidden>Loading form…</p>
+        </div>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     LOCATION
+══════════════════════════════════════════════════ -->
+<section id="location" data-phases="pre">
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="sec-title center lang-fr">Lieu &amp; Infos pratiques</h2>
+      <h2 class="sec-title center lang-en" hidden>Venue &amp; Practical Info</h2>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card">
+        <h3 class="lang-fr">📍 Informations pratiques</h3>
+        <h3 class="lang-en" hidden>📍 Practical Information</h3>
+        <div class="info-row">
+          <div class="inf-ic">📍</div>
+          <div class="inf-ct">
+            <strong class="lang-fr">Lieu</strong>
+            <strong class="lang-en" hidden>Venue</strong>
+            <p class="lang-fr">École Supérieure Polytechnique (ESP)<br>Université Cheikh Anta Diop (UCAD)<br>Amphithéâtre principal · Dakar, Sénégal</p>
+            <p class="lang-en" hidden>École Supérieure Polytechnique (ESP)<br>Cheikh Anta Diop University (UCAD)<br>Main Amphitheater · Dakar, Senegal</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="inf-ic">📅</div>
+          <div class="inf-ct">
+            <strong class="lang-fr">Date &amp; Horaires</strong>
+            <strong class="lang-en" hidden>Date &amp; Schedule</strong>
+            <p class="lang-fr">Mercredi 13 Mai 2026<br>14h30 – 18h30 (accueil dès 14h00)</p>
+            <p class="lang-en" hidden>Wednesday, May 13, 2026<br>2:30 PM – 6:30 PM (doors open at 2:00 PM)</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="inf-ic">🚌</div>
+          <div class="inf-ct">
+            <strong class="lang-fr">Accès</strong>
+            <strong class="lang-en" hidden>Access</strong>
+            <p class="lang-fr">Bus : lignes DDD, Guédiawaye · Taxi : ESP/UCAD Point E · Parking disponible sur le campus</p>
+            <p class="lang-en" hidden>Bus: DDD, Guédiawaye lines · Taxi: ESP/UCAD Point E · Parking available on campus</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="inf-ic">📶</div>
+          <div class="inf-ct">
+            <strong>WiFi</strong>
+            <p class="lang-fr">Réseau dédié disponible : <strong>IEEE_TechDay</strong></p>
+            <p class="lang-en" hidden>Dedicated network available: <strong>IEEE_TechDay</strong></p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="inf-ic">📧</div>
+          <div class="inf-ct">
+            <strong>Contact</strong>
+            <p><a href="mailto:ibra.dioum@esp.sn" style="color:var(--blue-600)">ibra.dioum@esp.sn</a></p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?q=Ecole+Superieure+Polytechnique+UCAD+Dakar+Senegal&output=embed&z=16"
+            allowfullscreen
+            loading="lazy"
+            title="ESP/UCAD Location"></iframe>
+        </div>
+        <p style="margin-top:.75rem;font-size:.8rem;color:var(--muted);text-align:center" class="lang-fr">📍 École Supérieure Polytechnique — Point E, Dakar</p>
+        <p style="margin-top:.75rem;font-size:.8rem;color:var(--muted);text-align:center" class="lang-en" hidden>📍 École Supérieure Polytechnique — Point E, Dakar</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     PARTNERS
+══════════════════════════════════════════════════ -->
+<section id="partners" data-phases="pre live post">
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="sec-title center lang-fr">Partenaires &amp; Sponsors</h2>
+      <h2 class="sec-title center lang-en" hidden>Partners &amp; Sponsors</h2>
+    </div>
+    <div class="partners-row">
+      <div class="partner-logo">
+        <img src="img_clean/logo_lita.png" alt="LITA">
+        <span>LITA · ESP/UCAD</span>
+      </div>
+      <div class="partner-logo">
+        <img src="img_clean/logo_esp.png" alt="ESP/UCAD">
+        <span>ESP / UCAD</span>
+      </div>
+      <div class="partner-logo">
+        <img src="Photos/Region8_Logo_RGB_Blue-Stacked.png" alt="IEEE Region 8">
+        <span>IEEE</span>
+      </div>
+      <div class="partner-logo">
+        <img src="img_clean/logo_aps.jpg" alt="IEEE AP-S">
+        <span>IEEE AP-S</span>
+      </div>
+      <div class="partner-logo">
+        <img src="img_clean/logo_mtts.jpg" alt="IEEE MTT-S">
+        <span>IEEE MTT-S</span>
+      </div>
+      <div class="partner-logo">
+        <img src="img_clean/logo_ascii.png" alt="ASCII">
+        <span>ASCII</span>
+      </div>
+      <div class="partner-logo">
+        <img src="Photos/IEEE Senegal Subsection logo.png" alt="IEEE Sénégal">
+        <span>IEEE Sénégal</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     REPLAYS (POST-EVENT)
+══════════════════════════════════════════════════ -->
+<section id="replays" data-phases="post">
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="sec-title center lang-fr">Replays vidéo</h2>
+      <h2 class="sec-title center lang-en" hidden>Video Replays</h2>
+      <p class="sec-sub lang-fr" style="margin-inline:auto">Revivez les meilleures interventions de l'événement</p>
+      <p class="sec-sub lang-en" hidden style="margin-inline:auto">Relive the best sessions from the event</p>
+    </div>
+    <div class="replays-grid">
+      <!-- These cards will be filled with actual replay links after the event -->
+      <div class="replay-card">
+        <div class="replay-thumb">
+          <div style="color:rgba(255,255,255,.15);font-size:3rem">▶</div>
+          <div class="play-overlay"><div class="play-circle">▶</div></div>
+        </div>
+        <div class="replay-info">
+          <div class="replay-title lang-fr">Keynote — Des antennes intelligentes à l'IoT frugal</div>
+          <div class="replay-title lang-en" hidden>Keynote — Smart Antennas to Frugal IoT</div>
+          <div class="replay-spk">Pr Ibra DIOUM</div>
+          <div class="replay-dur">25 min</div>
+        </div>
+      </div>
+      <div class="replay-card">
+        <div class="replay-thumb">
+          <div style="color:rgba(255,255,255,.15);font-size:3rem">▶</div>
+          <div class="play-overlay"><div class="play-circle">▶</div></div>
+        </div>
+        <div class="replay-info">
+          <div class="replay-title lang-fr">IoT &amp; capteurs EM pour le développement durable</div>
+          <div class="replay-title lang-en" hidden>IoT &amp; EM Sensors for Sustainable Development</div>
+          <div class="replay-spk">Dr Pape Abdoulaye FAM</div>
+          <div class="replay-dur">15 min</div>
+        </div>
+      </div>
+      <div class="replay-card">
+        <div class="replay-thumb">
+          <div style="color:rgba(255,255,255,.15);font-size:3rem">▶</div>
+          <div class="play-overlay"><div class="play-circle">▶</div></div>
+        </div>
+        <div class="replay-info">
+          <div class="replay-title lang-fr">Table ronde — Priorités IoT pour l'Afrique de l'Ouest</div>
+          <div class="replay-title lang-en" hidden>Round Table — IoT Priorities for West Africa</div>
+          <div class="replay-spk">Niang · Diallo · Mbacké · Diop · Diongue</div>
+          <div class="replay-dur">55 min</div>
+        </div>
+      </div>
+    </div>
+    <div class="coming-soon" style="margin-top:1.5rem">
+      <p class="lang-fr">🎬 Les liens de replay seront disponibles 48h après l'événement</p>
+      <p class="lang-en" hidden>🎬 Replay links will be available 48 hours after the event</p>
+      <small class="lang-fr">Abonnez-vous à la page LinkedIn du LITA pour être notifié</small>
+      <small class="lang-en" hidden>Follow LITA on LinkedIn to be notified</small>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     GALLERY (POST-EVENT)
+══════════════════════════════════════════════════ -->
+<section id="gallery" data-phases="post">
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="sec-title center lang-fr">Photos de l'événement</h2>
+      <h2 class="sec-title center lang-en" hidden>Event Photos</h2>
+    </div>
+    <div class="gallery-grid">
+      <!-- Placeholder gallery items — replace with actual event photos -->
+      <div class="gal-item"><div class="gal-ph">📷</div></div>
+      <div class="gal-item"><div class="gal-ph">📷</div></div>
+      <div class="gal-item"><div class="gal-ph">📷</div></div>
+      <div class="gal-item"><div class="gal-ph">📷</div></div>
+      <div class="gal-item"><div class="gal-ph">📷</div></div>
+      <div class="gal-item"><div class="gal-ph">📷</div></div>
+    </div>
+    <div class="coming-soon" style="margin-top:1.5rem">
+      <p class="lang-fr">📸 La galerie photo sera publiée après l'événement</p>
+      <p class="lang-en" hidden>📸 The photo gallery will be published after the event</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     POST SUMMARY
+══════════════════════════════════════════════════ -->
+<section id="post-summary" data-phases="post">
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="sec-title center lang-fr">Résumé de l'événement</h2>
+      <h2 class="sec-title center lang-en" hidden>Event Summary</h2>
+    </div>
+    <div class="sum-content">
+      <div class="sum-highlights">
+        <div class="hl-card">
+          <div class="hl-num" id="post-attendees">—</div>
+          <div class="hl-lbl lang-fr">Participants</div>
+          <div class="hl-lbl lang-en" hidden>Attendees</div>
+        </div>
+        <div class="hl-card">
+          <div class="hl-num">5</div>
+          <div class="hl-lbl lang-fr">Conférences &amp; Démos</div>
+          <div class="hl-lbl lang-en" hidden>Talks &amp; Demos</div>
+        </div>
+        <div class="hl-card">
+          <div class="hl-num">5</div>
+          <div class="hl-lbl lang-fr">Panélistes Table ronde</div>
+          <div class="hl-lbl lang-en" hidden>Round Table Panelists</div>
+        </div>
+      </div>
+      <div class="sum-text">
+        <p class="lang-fr">Le IEEE Antenna &amp; Microwave Tech Day 2026 s'est tenu avec succès à l'École Supérieure Polytechnique de l'UCAD. La journée a rassemblé chercheurs, étudiants et professionnels autour des technologies d'antennes et de l'IoT pour le développement.</p>
+        <p class="lang-en" hidden>The IEEE Antenna &amp; Microwave Tech Day 2026 was successfully held at the École Supérieure Polytechnique, UCAD. The event brought together researchers, students, and professionals around antenna and IoT technologies for development.</p>
+        <p class="lang-fr" style="color:var(--muted)"><em>Le rapport complet de l'événement sera publié prochainement sur les canaux LITA/IEEE.</em></p>
+        <p class="lang-en" hidden style="color:var(--muted)"><em>The full event report will be published shortly on LITA/IEEE channels.</em></p>
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="#" class="btn btn-blue lang-fr">📄 Télécharger le rapport</a>
+        <a href="#" class="btn btn-blue lang-en" hidden>📄 Download Report</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="Photos/Region8_Logo_RGB_Blue-Stacked.png" alt="IEEE Region 8">
+        <p class="lang-fr">IEEE Antenna &amp; Microwave Tech Day 2026 — organisé par le LITA · ESP/UCAD en partenariat avec l'ASCII, la Section IEEE Sénégal, l'IEEE AP-S et l'IEEE MTT-S.</p>
+        <p class="lang-en" hidden>IEEE Antenna &amp; Microwave Tech Day 2026 — organized by LITA · ESP/UCAD in partnership with ASCII, IEEE Senegal Section, IEEE AP-S and IEEE MTT-S.</p>
+        <div class="socials" style="margin-top:1rem">
+          <a href="https://www.linkedin.com/school/esp-ucad/" target="_blank" class="soc-lnk" title="LinkedIn">in</a>
+          <a href="https://twitter.com/" target="_blank" class="soc-lnk" title="X / Twitter">𝕏</a>
+          <a href="https://www.facebook.com/" target="_blank" class="soc-lnk" title="Facebook">f</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4 class="lang-fr">Navigation</h4>
+        <h4 class="lang-en" hidden>Navigation</h4>
+        <ul>
+          <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+          <li><a href="#program" data-i18n="nav.program">Programme</a></li>
+          <li><a href="#speakers" data-i18n="nav.speakers">Intervenants</a></li>
+          <li><a href="#register" data-i18n="nav.register">S'inscrire</a></li>
+          <li><a href="#location" data-i18n="nav.location">Lieu</a></li>
+          <li><a href="#partners" data-i18n="nav.partners">Partenaires</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:lita@esp.sn">lita@esp.sn</a></li>
+          <li><a href="http://www.lita.sn" target="_blank">www.lita.sn</a></li>
+          <li><a href="http://www.esp.sn" target="_blank">www.esp.sn</a></li>
+        </ul>
+        <div style="margin-top:1.2rem">
+          <span class="hashtag">#IEEEAMTDay</span><br>
+          <span class="hashtag">#LITA_UCAD</span><br>
+          <span class="hashtag">#IoTDakar</span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="lang-fr">© 2026 LITA · ESP/UCAD · Tous droits réservés</span>
+      <span class="lang-en" hidden>© 2026 LITA · ESP/UCAD · All rights reserved</span>
+      <span class="lang-fr">Organisé avec le soutien de l'IEEE AP-S &amp; MTT-S</span>
+      <span class="lang-en" hidden>Organized with the support of IEEE AP-S &amp; MTT-S</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════
+     SCRIPT
+══════════════════════════════════════════════════ -->
+<script>
+/* ── TRANSLATIONS ── */
+const T = {
+  fr: {
+    'nav.about':    'À propos',
+    'nav.program':  'Programme',
+    'nav.speakers': 'Intervenants',
+    'nav.register': "S'inscrire",
+    'nav.location': 'Lieu',
+    'nav.partners': 'Partenaires',
+    'phase.pre':  "Avant l'événement",
+    'phase.live': 'En direct',
+    'phase.post': "Après l'événement",
+    'btn.register': "S'inscrire — Inscription gratuite",
+    'btn.program':  'Voir le programme',
+    'cdown.label':   'Compte à rebours',
+    'cdown.days':    'Jours',
+    'cdown.hours':   'Heures',
+    'cdown.minutes': 'Minutes',
+    'cdown.seconds': 'Secondes',
+    'cdown.note':    "avant le lancement de l'événement",
+  },
+  en: {
+    'nav.about':    'About',
+    'nav.program':  'Program',
+    'nav.speakers': 'Speakers',
+    'nav.register': 'Register',
+    'nav.location': 'Venue',
+    'nav.partners': 'Partners',
+    'phase.pre':  'Pre-event',
+    'phase.live': 'Live',
+    'phase.post': 'Post-event',
+    'btn.register': 'Register — Free Admission',
+    'btn.program':  'View Program',
+    'cdown.label':   'Countdown',
+    'cdown.days':    'Days',
+    'cdown.hours':   'Hours',
+    'cdown.minutes': 'Minutes',
+    'cdown.seconds': 'Seconds',
+    'cdown.note':    'until the event begins',
+  }
+};
+
+/* ── LANGUAGE ── */
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.body.dataset.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.dataset.i18n;
+    if (T[lang] && T[lang][k]) el.innerHTML = T[lang][k];
+  });
+  document.querySelectorAll('.lang-fr,.lang-en').forEach(el => {
+    el.hidden = !el.classList.contains('lang-' + lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  localStorage.setItem('lang', lang);
+}
+
+/* ── PHASE ── */
+const EVENT_START = new Date('2026-05-13T14:30:00Z');
+const EVENT_END   = new Date('2026-05-13T18:30:00Z');
+
+function detectPhase() {
+  const now = new Date();
+  if (now < EVENT_START) return 'pre';
+  if (now <= EVENT_END)  return 'live';
+  return 'post';
+}
+
+function setPhase(phase) {
+  document.body.dataset.phase = phase;
+  document.querySelectorAll('.phase-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.phase === phase);
+  });
+  // Show/hide sections by data-phases attribute
+  document.querySelectorAll('[data-phases]').forEach(el => {
+    const allowed = el.dataset.phases.split(' ');
+    el.hidden = !allowed.includes(phase);
+  });
+  // Update nav register link visibility
+  updateNavLinks(phase);
+  localStorage.setItem('manualPhase', phase);
+}
+
+function updateNavLinks(phase) {
+  const regLink = document.querySelector('.nav-reg');
+  if (regLink) regLink.style.display = (phase === 'pre') ? '' : 'none';
+}
+
+/* ── COUNTDOWN ── */
+function updateCountdown() {
+  const now  = new Date();
+  const diff = EVENT_START - now;
+  if (diff <= 0) {
+    ['cd-days','cd-hours','cd-min','cd-sec'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = '00';
+    });
+    return;
+  }
+  const d = Math.floor(diff / 864e5);
+  const h = Math.floor((diff % 864e5) / 36e5);
+  const m = Math.floor((diff % 36e5) / 6e4);
+  const s = Math.floor((diff % 6e4) / 1e3);
+  const fmt = n => String(n).padStart(2,'0');
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = fmt(v); };
+  set('cd-days', d); set('cd-hours', h); set('cd-min', m); set('cd-sec', s);
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+/* ── LIVE SCHEDULE ── */
+const SCHEDULE = [
+  { start:'14:30', end:'14:40', fr:'Ouverture officielle', en:'Official Opening', spk:'' },
+  { start:'14:40', end:'15:05', fr:"Keynote — Des antennes intelligentes à l'IoT frugal", en:'Keynote — Smart Antennas to Frugal IoT', spk:'Pr Ibra DIOUM' },
+  { start:'15:05', end:'15:20', fr:'Talk 1 — IoT & capteurs EM', en:'Talk 1 — IoT & EM Sensors', spk:'Dr Pape Abdoulaye FAM' },
+  { start:'15:20', end:'15:35', fr:'Talk 2 — Communications optiques sans fil (FSO)', en:'Talk 2 — Free-Space Optics (FSO)', spk:'Dr Mangoné FALL' },
+  { start:'15:35', end:'15:45', fr:'Discussion & questions', en:'Discussion & Q&A', spk:'' },
+  { start:'15:45', end:'16:15', fr:'Démo 1 — Du capteur au cloud', en:'Demo 1 — From Sensor to Cloud', spk:'Dr Ousmane SADIO' },
+  { start:'16:15', end:'16:45', fr:"Démo 2 — Mesures d'antennes & RF", en:'Demo 2 — Antenna & RF Measurements', spk:'Dr Pape Waly SARR' },
+  { start:'16:45', end:'17:15', fr:'Session Posters & Démonstrations', en:'Poster Session & Demonstrations', spk:'' },
+  { start:'17:15', end:'18:10', fr:'Table ronde — Priorités IoT pour l\'Afrique de l\'Ouest', en:'Round Table — IoT Priorities for West Africa', spk:'Niang · Diallo · Mbacké · Diop · Diongue' },
+  { start:'18:10', end:'18:30', fr:'Remise de prix & Cocktail', en:'Awards & Networking Cocktail', spk:'' },
+];
+
+function timeToMins(t) { const [h,m] = t.split(':').map(Number); return h*60+m; }
+
+function updateLiveSchedule() {
+  const now = new Date();
+  const curMins = now.getUTCHours()*60 + now.getUTCMinutes();
+  const lang = document.body.dataset.lang || 'fr';
+  const titleEl = document.getElementById('live-now-title');
+  const spkEl   = document.getElementById('live-now-spk');
+  const nextEl  = document.getElementById('live-next-list');
+  if (!titleEl) return;
+
+  let current = null, upcoming = [];
+  SCHEDULE.forEach(s => {
+    const st = timeToMins(s.start), en = timeToMins(s.end);
+    if (curMins >= st && curMins < en) current = s;
+    else if (curMins < st) upcoming.push(s);
+  });
+
+  if (current) {
+    titleEl.textContent = current[lang];
+    spkEl.textContent   = current.spk || '—';
+  }
+
+  if (nextEl) {
+    nextEl.innerHTML = upcoming.slice(0,3).map(s =>
+      `<div class="ln-item"><div class="ln-time">${s.start}</div><div class="ln-title">${s[lang]}</div></div>`
+    ).join('');
+  }
+}
+setInterval(updateLiveSchedule, 30000);
+updateLiveSchedule();
+
+/* ── NAVBAR SCROLL ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+/* ── MOBILE NAV ── */
+function openMobNav()  { document.getElementById('mob-nav').classList.add('open'); }
+function closeMobNav() { document.getElementById('mob-nav').classList.remove('open'); }
+
+/* ── INIT ── */
+(function init() {
+  // Language
+  const savedLang = localStorage.getItem('lang') || 'fr';
+  setLang(savedLang);
+
+  // Phase: auto-detect but allow manual override via localStorage (for testing)
+  const manualPhase = localStorage.getItem('manualPhase');
+  const autoPhase   = detectPhase();
+  // Use auto-phase (manual override only active if it was set in this same session)
+  setPhase(autoPhase);
+
+  // Sync phase buttons to current phase
+  document.querySelectorAll('.phase-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      setPhase(b.dataset.phase);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
