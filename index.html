@@ -503,6 +503,32 @@
     </div>
   </div>
   <div class="container">
+
+    <!-- Carte principale : rejoindre le Meet -->
+    <div style="max-width:680px;margin:0 auto 2rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:2rem 2.5rem;text-align:center">
+      <div style="font-size:2.5rem;margin-bottom:.75rem">📹</div>
+      <div class="lang-fr" style="font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:.5rem">L'événement est diffusé sur Google Meet</div>
+      <div class="lang-en" hidden style="font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:.5rem">The event is broadcast on Google Meet</div>
+      <div class="lang-fr" style="color:rgba(255,255,255,.65);font-size:.9rem;margin-bottom:.4rem">Cliquez sur le bouton ci-dessous pour rejoindre la réunion en direct.</div>
+      <div class="lang-en" hidden style="color:rgba(255,255,255,.65);font-size:.9rem;margin-bottom:.4rem">Click the button below to join the live meeting.</div>
+      <div style="color:rgba(255,255,255,.4);font-size:.8rem;margin-bottom:1.5rem">
+        <span class="lang-fr">⚠️ Un compte Google est requis pour participer</span>
+        <span class="lang-en" hidden>⚠️ A Google account is required to join</span>
+      </div>
+      <a href="https://meet.google.com/gah-imjp-eag"
+         target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:.65rem;background:var(--orange);color:#fff;padding:.85rem 2rem;border-radius:50px;font-weight:700;font-size:1rem;box-shadow:0 8px 24px rgba(232,119,34,.4);transition:transform .2s">
+        📹
+        <span class="lang-fr">Rejoindre Google Meet</span>
+        <span class="lang-en" hidden>Join Google Meet</span>
+      </a>
+      <div style="margin-top:1.1rem;display:flex;align-items:center;justify-content:center;gap:.5rem">
+        <span style="color:rgba(255,255,255,.35);font-size:.78rem">Code :</span>
+        <code style="background:rgba(255,255,255,.1);color:var(--gold);padding:.2rem .65rem;border-radius:6px;font-size:.85rem;font-weight:700;letter-spacing:.05em">gah-imjp-eag</code>
+      </div>
+    </div>
+
+    <!-- Player stream en fond (si disponible) -->
     <div class="player-wrap" id="player-wrap">
       <iframe
         id="stream-iframe"
@@ -513,29 +539,13 @@
         onload="checkIframe(this)"
         style="width:100%;height:100%;border:none">
       </iframe>
-      <!-- Fallback si iframe bloqué -->
       <div class="player-ph" id="stream-fallback" style="display:none">
         <div class="ph-icon">📡</div>
-        <div class="lang-fr" style="font-weight:600;font-size:1rem">Diffusion en cours</div>
-        <div class="lang-en" hidden style="font-weight:600;font-size:1rem">Live broadcast in progress</div>
-        <div class="lang-fr" style="font-size:.85rem">Le lecteur ne peut pas s'afficher ici — ouvrez le direct dans un nouvel onglet</div>
-        <div class="lang-en" hidden style="font-size:.85rem">The player cannot display here — open the stream in a new tab</div>
-        <a href="https://stream.meet.google.com/stream/a707f431-152b-4158-94e6-e4d43cb3c68c"
-           target="_blank" rel="noopener"
-           style="margin-top:.5rem;background:var(--orange);color:#fff;padding:.65rem 1.4rem;border-radius:50px;font-weight:700;font-size:.9rem;display:inline-flex;align-items:center;gap:.5rem">
-          ▶ <span class="lang-fr">Regarder en direct</span><span class="lang-en" hidden>Watch Live</span>
-        </a>
+        <div class="lang-fr" style="font-weight:600;font-size:.95rem;color:rgba(255,255,255,.7)">Rejoignez directement via le bouton ci-dessus</div>
+        <div class="lang-en" hidden style="font-weight:600;font-size:.95rem;color:rgba(255,255,255,.7)">Join directly via the button above</div>
       </div>
     </div>
-    <!-- Bouton de secours toujours visible sous le player -->
-    <div style="text-align:center;margin-top:1.25rem">
-      <a href="https://stream.meet.google.com/stream/a707f431-152b-4158-94e6-e4d43cb3c68c"
-         target="_blank" rel="noopener"
-         class="btn btn-outline" style="font-size:.85rem;border-color:rgba(255,255,255,.4)">
-        🔗 <span class="lang-fr">Ouvrir le direct dans un nouvel onglet</span>
-        <span class="lang-en" hidden>Open stream in a new tab</span>
-      </a>
-    </div>
+
   </div>
 </section>
 
