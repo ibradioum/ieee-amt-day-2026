@@ -503,18 +503,38 @@
     </div>
   </div>
   <div class="container">
-    <div class="player-wrap">
-      <!-- Replace the src URL below with the actual YouTube/Vimeo live link -->
-      <div class="player-ph">
-        <div class="ph-icon">▶</div>
-        <div class="lang-fr">Le lien de diffusion sera activé le 13 Mai 2026</div>
-        <div class="lang-en" hidden>The broadcast link will be activated on May 13, 2026</div>
-        <small style="opacity:.6" class="lang-fr">Actualiser la page une fois le direct commencé</small>
-        <small style="opacity:.6" class="lang-en" hidden>Refresh this page once the broadcast begins</small>
+    <div class="player-wrap" id="player-wrap">
+      <iframe
+        id="stream-iframe"
+        src="https://stream.meet.google.com/stream/a707f431-152b-4158-94e6-e4d43cb3c68c"
+        allowfullscreen
+        allow="autoplay; camera; microphone; display-capture"
+        title="IEEE AMT Day 2026 — Diffusion en direct"
+        onload="checkIframe(this)"
+        style="width:100%;height:100%;border:none">
+      </iframe>
+      <!-- Fallback si iframe bloqué -->
+      <div class="player-ph" id="stream-fallback" style="display:none">
+        <div class="ph-icon">📡</div>
+        <div class="lang-fr" style="font-weight:600;font-size:1rem">Diffusion en cours</div>
+        <div class="lang-en" hidden style="font-weight:600;font-size:1rem">Live broadcast in progress</div>
+        <div class="lang-fr" style="font-size:.85rem">Le lecteur ne peut pas s'afficher ici — ouvrez le direct dans un nouvel onglet</div>
+        <div class="lang-en" hidden style="font-size:.85rem">The player cannot display here — open the stream in a new tab</div>
+        <a href="https://stream.meet.google.com/stream/a707f431-152b-4158-94e6-e4d43cb3c68c"
+           target="_blank" rel="noopener"
+           style="margin-top:.5rem;background:var(--orange);color:#fff;padding:.65rem 1.4rem;border-radius:50px;font-weight:700;font-size:.9rem;display:inline-flex;align-items:center;gap:.5rem">
+          ▶ <span class="lang-fr">Regarder en direct</span><span class="lang-en" hidden>Watch Live</span>
+        </a>
       </div>
-      <!-- When ready, replace the div.player-ph above with:
-      <iframe src="https://www.youtube.com/embed/LIVE_VIDEO_ID?autoplay=1" allowfullscreen allow="autoplay"></iframe>
-      -->
+    </div>
+    <!-- Bouton de secours toujours visible sous le player -->
+    <div style="text-align:center;margin-top:1.25rem">
+      <a href="https://stream.meet.google.com/stream/a707f431-152b-4158-94e6-e4d43cb3c68c"
+         target="_blank" rel="noopener"
+         class="btn btn-outline" style="font-size:.85rem;border-color:rgba(255,255,255,.4)">
+        🔗 <span class="lang-fr">Ouvrir le direct dans un nouvel onglet</span>
+        <span class="lang-en" hidden>Open stream in a new tab</span>
+      </a>
     </div>
   </div>
 </section>
@@ -1239,6 +1259,30 @@
      SCRIPT
 ══════════════════════════════════════════════════ -->
 <script>
+/* ── IFRAME FALLBACK ── */
+function checkIframe(iframe) {
+  // Tente de détecter si l'iframe est bloqué (X-Frame-Options / CSP)
+  setTimeout(function() {
+    try {
+      // Si contentDocument est null ou inaccessible → probablement bloqué
+      var doc = iframe.contentDocument || iframe.contentWindow.document;
+      if (!doc || doc.body === null || doc.body.innerHTML === '') {
+        showStreamFallback();
+      }
+    } catch(e) {
+      // Cross-origin block = le stream charge (c'est normal pour un domaine externe)
+      // On ne montre pas le fallback dans ce cas
+    }
+  }, 4000);
+}
+
+function showStreamFallback() {
+  var iframe = document.getElementById('stream-iframe');
+  var fallback = document.getElementById('stream-fallback');
+  if (iframe) iframe.style.display = 'none';
+  if (fallback) fallback.style.display = 'flex';
+}
+
 /* ── TRANSLATIONS ── */
 const T = {
   fr: {
