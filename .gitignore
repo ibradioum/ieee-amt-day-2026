@@ -21,6 +21,13 @@ Keynote/
 Thumbs.db
 desktop.ini
 
+# Node
+node_modules/
+package*.json
+
+# Photos originales (trop lourdes pour GitHub)
+Photos IEEE 2026/
+
 # Temp
 *.tmp
 *.bak

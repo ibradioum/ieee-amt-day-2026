@@ -278,6 +278,18 @@
     .hl-lbl{font-size:.82rem;color:var(--muted);margin-top:.25rem}
     .sum-text p{color:var(--text);line-height:1.85;margin-bottom:1rem}
 
+    /* ── LIGHTBOX ── */
+    #lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9000;align-items:center;justify-content:center;cursor:zoom-out}
+    #lightbox.open{display:flex}
+    #lightbox img{max-width:92vw;max-height:90vh;border-radius:8px;object-fit:contain;box-shadow:0 0 60px rgba(0,0,0,.8)}
+    #lb-close{position:absolute;top:1.2rem;right:1.5rem;color:#fff;font-size:2rem;cursor:pointer;opacity:.7;transition:opacity .2s;line-height:1;background:none;border:none}
+    #lb-close:hover{opacity:1}
+    #lb-prev,#lb-next{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.5rem;cursor:pointer;opacity:.6;transition:opacity .2s;background:none;border:none;padding:.5rem 1rem;user-select:none}
+    #lb-prev{left:1rem} #lb-next{right:1rem}
+    #lb-prev:hover,#lb-next:hover{opacity:1}
+    #lb-counter{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.55);font-size:.82rem}
+    .gal-item{cursor:zoom-in}
+
     /* ── FOOTER ── */
     footer{background:var(--blue-950);color:rgba(255,255,255,.6);padding:3rem 0 1.5rem}
     .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
@@ -1158,18 +1170,140 @@
       <h2 class="sec-title center lang-en" hidden>Event Photos</h2>
     </div>
     <div class="gallery-grid">
-      <!-- Placeholder gallery items — replace with actual event photos -->
-      <div class="gal-item"><div class="gal-ph">📷</div></div>
-      <div class="gal-item"><div class="gal-ph">📷</div></div>
-      <div class="gal-item"><div class="gal-ph">📷</div></div>
-      <div class="gal-item"><div class="gal-ph">📷</div></div>
-      <div class="gal-item"><div class="gal-ph">📷</div></div>
-      <div class="gal-item"><div class="gal-ph">📷</div></div>
+      <div class="gal-item"><img src="gallery/201a4533_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4536_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4540_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4550_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4556_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4565_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4570_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4571_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4574_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4579_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4580_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4585_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4586_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4587_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4594_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4597_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4599_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4600_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4601_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4602_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4603_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4604_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4608_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4609_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4610_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4615_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4624_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4627_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4629_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4630_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4636_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4640_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4653_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4656_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4662_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4663_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4664_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4665_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4666_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4667_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4672_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4673_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4675_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4676_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4677_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4680_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4682_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4683_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4687_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4688_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4692_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4694_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4696_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4697_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4698_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4699_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4700_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4701_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4702_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4703_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4704_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4708_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4709_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4710_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4711_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4716_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4718_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4719_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4720_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4721_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4723_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4725_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4726_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4727_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4729_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4731_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4732_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4733_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4735_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4736_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4738_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4739_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4740_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4741_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4742_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4745_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4746_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4753_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4755_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4762_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4763_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4764_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4765_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4766_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4773_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4775_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4780_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4782_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4784_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4785_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4786_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4787_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4788_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4790_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4793_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4794_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4800_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4802_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4805_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4809_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4811_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4813_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4817_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4820_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4821_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4824_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4827_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4828_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4834_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4837_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4840_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4842_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4843_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4847_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4849_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4851_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4852_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4855_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4858_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4862_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4871_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
+      <div class="gal-item"><img src="gallery/201a4877_web.jpg" alt="IEEE AMT Day 2026" loading="lazy"></div>
     </div>
-    <div class="coming-soon" style="margin-top:1.5rem">
-      <p class="lang-fr">📸 La galerie photo sera publiée après l'événement</p>
-      <p class="lang-en" hidden>📸 The photo gallery will be published after the event</p>
-    </div>
+    
   </div>
 </section>
 
@@ -1217,6 +1351,15 @@
 <!-- ══════════════════════════════════════════════════
      FOOTER
 ══════════════════════════════════════════════════ -->
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="lbClose(event)">
+  <button id="lb-close" onclick="closeLb()" title="Fermer">✕</button>
+  <button id="lb-prev" onclick="lbNav(-1,event)">&#8249;</button>
+  <img id="lb-img" src="" alt="Photo événement">
+  <button id="lb-next" onclick="lbNav(1,event)">&#8250;</button>
+  <div id="lb-counter"></div>
+</div>
+
 <footer>
   <div class="container">
     <div class="foot-grid">
@@ -1292,6 +1435,41 @@ function showStreamFallback() {
   if (iframe) iframe.style.display = 'none';
   if (fallback) fallback.style.display = 'flex';
 }
+
+
+/* ── LIGHTBOX ── */
+let lbImages = [], lbIndex = 0;
+function initLightbox() {
+  const items = document.querySelectorAll('.gal-item img');
+  lbImages = Array.from(items).map(img => img.src);
+  items.forEach((img, i) => {
+    img.parentElement.addEventListener('click', () => openLb(i));
+  });
+}
+function openLb(i) {
+  lbIndex = i;
+  document.getElementById('lb-img').src = lbImages[i];
+  document.getElementById('lb-counter').textContent = (i+1) + ' / ' + lbImages.length;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLb() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function lbClose(e) { if (e.target === document.getElementById('lightbox')) closeLb(); }
+function lbNav(dir, e) {
+  e.stopPropagation();
+  lbIndex = (lbIndex + dir + lbImages.length) % lbImages.length;
+  document.getElementById('lb-img').src = lbImages[lbIndex];
+  document.getElementById('lb-counter').textContent = (lbIndex+1) + ' / ' + lbImages.length;
+}
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowLeft') lbNav(-1, e);
+  if (e.key === 'ArrowRight') lbNav(1, e);
+});
 
 /* ── TRANSLATIONS ── */
 const T = {
@@ -1478,6 +1656,7 @@ function closeMobNav() { document.getElementById('mob-nav').classList.remove('op
       setPhase(b.dataset.phase);
     });
   });
+  initLightbox();
 })();
 </script>
 
