@@ -2,9 +2,13 @@
 *.aux
 *.log
 *.out
-*.pdf
 *.synctex.gz
 affiche_ieee_techday_2026.*
+
+# PDFs (exclus sauf les rapports officiels publiés sur le site)
+*.pdf
+!rapport_ieee_amt_2026_FR.pdf
+!rapport_ieee_amt_2026_EN.pdf
 
 # Thesis
 Thése_version_corrigé.pdf
